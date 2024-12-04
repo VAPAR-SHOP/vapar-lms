@@ -54,19 +54,19 @@ function DashLeftMenu() {
             href={'/'}
           >
             <ToolTip
-              content={'Back to Home'}
+              content={'Вернуться на главную'}
               slateBlack
               sideOffset={8}
               side="right"
             >
               <Image
-                alt="Learnhouse logo"
+                alt="LearnHouse Dashboard Logo"
                 width={40}
                 src={LearnHouseDashboardLogo}
               />
             </ToolTip>
             <ToolTip
-              content={'Your Organization'}
+              content={'Ваш организация: '}
               slateBlack
               sideOffset={8}
               side="right"
@@ -82,7 +82,7 @@ function DashLeftMenu() {
                         <Link className='bg-white text-black hover:text-white rounded-lg p-2 hover:bg-white/10 transition-all ease-linear' href={`/`} ><ArrowLeft className='hover:text-white' size={18} /></Link>
                     </ToolTip> */}
           <AdminAuthorization authorizationMode="component">
-            <ToolTip content={'Home'} slateBlack sideOffset={8} side="right">
+            <ToolTip content={'Главная'} slateBlack sideOffset={8} side="right">
               <Link
                 className="bg-white/5 rounded-lg p-2 hover:bg-white/10 transition-all ease-linear"
                 href={`/dash`}
@@ -90,7 +90,7 @@ function DashLeftMenu() {
                 <Home size={18} />
               </Link>
             </ToolTip>
-            <ToolTip content={'Courses'} slateBlack sideOffset={8} side="right">
+            <ToolTip content={'Курсы'} slateBlack sideOffset={8} side="right">
               <Link
                 className="bg-white/5 rounded-lg p-2 hover:bg-white/10 transition-all ease-linear"
                 href={`/dash/courses`}
@@ -98,7 +98,7 @@ function DashLeftMenu() {
                 <BookCopy size={18} />
               </Link>
             </ToolTip>
-            <ToolTip content={'Assignments'} slateBlack sideOffset={8} side="right">
+            <ToolTip content={'Заданияы'} slateBlack sideOffset={8} side="right">
               <Link
                 className="bg-white/5 rounded-lg p-2 hover:bg-white/10 transition-all ease-linear"
                 href={`/dash/assignments`}
@@ -106,7 +106,7 @@ function DashLeftMenu() {
                 <Backpack size={18} />
               </Link>
             </ToolTip>
-            <ToolTip content={'Users'} slateBlack sideOffset={8} side="right">
+            <ToolTip content={'Пользователи'} slateBlack sideOffset={8} side="right">
               <Link
                 className="bg-white/5 rounded-lg p-2 hover:bg-white/10 transition-all ease-linear"
                 href={`/dash/users/settings/users`}
@@ -115,7 +115,7 @@ function DashLeftMenu() {
               </Link>
             </ToolTip>
             {isPaymentsEnabled && (
-              <ToolTip content={'Payments'} slateBlack sideOffset={8} side="right">
+              <ToolTip content={'Платежи'} slateBlack sideOffset={8} side="right">
                 <Link
                   className="bg-white/5 rounded-lg p-2 hover:bg-white/10 transition-all ease-linear"
                   href={`/dash/payments/customers`}
@@ -125,7 +125,7 @@ function DashLeftMenu() {
               </ToolTip>
             )}
             <ToolTip
-              content={'Organization'}
+              content={'Настройки организации'}
               slateBlack
               sideOffset={8}
               side="right"
@@ -154,7 +154,7 @@ function DashLeftMenu() {
             <div className="flex items-center flex-col space-y-3">
               <div className="flex flex-col space-y-1 py-1">
                 <ToolTip
-                  content={session.data.user.username + "'s Owned Courses"}
+                  content={"Курсы " + session.data.user.username}
                 slateBlack
                 sideOffset={8}
                 side="right"
@@ -170,7 +170,7 @@ function DashLeftMenu() {
                 </Link>
               </ToolTip>
                 <ToolTip
-                  content={session.data.user.username + "'s Settings"}
+                  content={"Настройки " + session.data.user.username}
                 slateBlack
                 sideOffset={8}
                 side="right"
@@ -187,7 +187,7 @@ function DashLeftMenu() {
                 </ToolTip>
               </div>
               <ToolTip
-                content={'Logout'}
+                content={'Выйти'}
                 slateBlack
                 sideOffset={8}
                 side="right"

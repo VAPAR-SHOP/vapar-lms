@@ -52,9 +52,9 @@ function EditCourseAccess(props: EditCourseAccessProps) {
                     <div className="h-6"></div>
                     <div className="mx-4 sm:mx-10 bg-white rounded-xl shadow-sm px-4 py-4">
                         <div className="flex flex-col bg-gray-50 -space-y-1 px-3 sm:px-5 py-3 rounded-md mb-3">
-                            <h1 className="font-bold text-lg sm:text-xl text-gray-800">Access to the course</h1>
+                            <h1 className="font-bold text-lg sm:text-xl text-gray-800">Доступ к курсу</h1>
                             <h2 className="text-gray-500 text-xs sm:text-sm">
-                                Choose if you want your course to be publicly available on the internet or only accessible to signed in users
+                                Выберите, хотите ли вы, чтобы ваш курс был доступен в интернете или только для авторизованных пользователей
                             </h2>
                         </div>
                         <div className="flex flex-col sm:flex-row sm:space-x-2 space-y-2 sm:space-y-0 mx-auto mb-3">
@@ -66,16 +66,16 @@ function EditCourseAccess(props: EditCourseAccessProps) {
                                     <div className="w-full h-[200px] bg-slate-100 rounded-lg cursor-pointer hover:bg-slate-200 transition-all">
                                         {isClientPublic && (
                                             <div className="bg-green-200 text-green-600 font-bold w-fit my-3 mx-3 absolute text-sm px-3 py-1 rounded-lg">
-                                                Active
+                                                Активен
                                             </div>
                                         )}
                                         <div className="flex flex-col space-y-1 justify-center items-center h-full p-2 sm:p-4">
                                             <Globe className="text-slate-400" size={32} />
                                             <div className="text-xl sm:text-2xl text-slate-700 font-bold">
-                                                Public
+                                                Публичный
                                             </div>
                                             <div className="text-gray-400 text-sm sm:text-md tracking-tight w-full sm:w-[500px] leading-5 text-center">
-                                                The Course is publicly available on the internet, it is indexed by search engines and can be accessed by anyone
+                                                Курс доступен в интернете, он индексируется поисковыми системами и может быть доступен любому
                                             </div>
                                         </div>
                                     </div>
@@ -84,23 +84,23 @@ function EditCourseAccess(props: EditCourseAccessProps) {
                                 status="info"
                             />
                             <ConfirmationModal
-                                confirmationButtonText="Change to Users Only"
-                                confirmationMessage="Are you sure you want this course to be only accessible to signed in users?"
-                                dialogTitle="Change to Users Only?"
+                                confirmationButtonText="Изменить на Users Only"
+                                confirmationMessage="Вы действительно хотите изменить доступ к вашему курсу на Users Only?"
+                                dialogTitle="Изменить на Users Only?"
                                 dialogTrigger={
                                     <div className="w-full h-[200px] bg-slate-100 rounded-lg cursor-pointer hover:bg-slate-200 transition-all">
                                         {!isClientPublic && (
                                             <div className="bg-green-200 text-green-600 font-bold w-fit my-3 mx-3 absolute text-sm px-3 py-1 rounded-lg">
-                                                Active
+                                                Активен
                                             </div>
                                         )}
                                         <div className="flex flex-col space-y-1 justify-center items-center h-full p-2 sm:p-4">
                                             <Users className="text-slate-400" size={32} />
                                             <div className="text-xl sm:text-2xl text-slate-700 font-bold">
-                                                Users Only
+                                                только пользователи
                                             </div>
                                             <div className="text-gray-400 text-sm sm:text-md tracking-tight w-full sm:w-[500px] leading-5 text-center">
-                                                The Course is only accessible to signed in users, additionally you can choose which UserGroups can access this course
+                                                Курс доступен только авторизованным пользователям, кроме того, вы можете выбрать, какие UserGroups могут иметь доступ к этому курсу
                                             </div>
                                         </div>
                                     </div>
@@ -127,30 +127,30 @@ function UserGroupsSection({ usergroups }: { usergroups: any[] }) {
         try {
             const res = await unLinkResourcesToUserGroup(usergroup_id, course.courseStructure.course_uuid, access_token);
             if (res.status === 200) {
-                toast.success('Successfully unlinked from usergroup');
+                toast.success('успешно отвязан от UserGroup');
                 mutate(`${getAPIUrl()}usergroups/resource/${course.courseStructure.course_uuid}`);
             } else {
                 toast.error(`Error ${res.status}: ${res.data.detail}`);
             }
         } catch (error) {
-            toast.error('An error occurred while unlinking the user group.');
+            toast.error('Возникла ошибка при отвязке от UserGroup');
         }
     };
 
     return (
         <>
             <div className="flex flex-col bg-gray-50 -space-y-1 px-3 sm:px-5 py-3 rounded-md mb-3">
-                <h1 className="font-bold text-lg sm:text-xl text-gray-800">UserGroups</h1>
+                <h1 className="font-bold text-lg sm:text-xl text-gray-800">Группы пользователей</h1>
                 <h2 className="text-gray-500 text-xs sm:text-sm">
-                    You can choose to give access to this course to specific groups of users only by linking it to a UserGroup
+                    Вы можете выбрать, какие группы пользователей будут иметь доступ к этому курсу, связав его с UserGroup
                 </h2>
             </div>
             <div className="overflow-x-auto">
                 <table className="table-auto w-full text-left whitespace-nowrap rounded-md overflow-hidden">
                     <thead className="bg-gray-100 text-gray-500 rounded-xl uppercase">
                         <tr className="font-bolder text-sm">
-                            <th className="py-3 px-4">Name</th>
-                            <th className="py-3 px-4">Actions</th>
+                            <th className="py-3 px-4">Имя</th>
+                            <th className="py-3 px-4">Действие</th>
                         </tr>
                     </thead>
                     <tbody className="mt-5 bg-white rounded-md">
@@ -159,13 +159,13 @@ function UserGroupsSection({ usergroups }: { usergroups: any[] }) {
                                 <td className="py-3 px-4">{usergroup.name}</td>
                                 <td className="py-3 px-4">
                                     <ConfirmationModal
-                                        confirmationButtonText="Delete Link"
-                                        confirmationMessage="Users from this UserGroup will no longer have access to this course"
-                                        dialogTitle="Unlink UserGroup?"
+                                        confirmationButtonText="Удалить привязку"
+                                        confirmationMessage="Пользователи из этой группы не смогут иметь доступ к этому курсу?"
+                                        dialogTitle="Отвязать группу пользователей?"
                                         dialogTrigger={
                                             <button className="mr-2 flex space-x-2 hover:cursor-pointer p-1 px-3 bg-rose-700 rounded-md font-bold items-center text-sm text-rose-100">
                                                 <X className="w-4 h-4" />
-                                                <span>Delete link</span>
+                                                <span>Удалить привязку</span>
                                             </button>
                                         }
                                         functionToExecute={() => removeUserGroupLink(usergroup.id)}
@@ -184,12 +184,12 @@ function UserGroupsSection({ usergroups }: { usergroups: any[] }) {
                     minHeight="no-min"
                     minWidth="md"
                     dialogContent={<LinkToUserGroup setUserGroupModal={setUserGroupModal} />}
-                    dialogTitle="Link Course to a UserGroup"
-                    dialogDescription="Choose a UserGroup to link this course to. Users from this UserGroup will have access to this course."
+                    dialogTitle="Привязать к Группе пользователей"
+                    dialogDescription="Выберите, какая группа пользователей будет иметь доступ к этому курсу"
                     dialogTrigger={
                         <button className="flex space-x-2 hover:cursor-pointer p-1 px-3 bg-green-700 rounded-md font-bold items-center text-xs sm:text-sm text-green-100">
                             <SquareUserRound className="w-3 h-3 sm:w-4 sm:h-4" />
-                            <span>Link to a UserGroup</span>
+                            <span>Привязать к Группе пользователей</span>
                         </button>
                     }
                 />

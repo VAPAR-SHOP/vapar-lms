@@ -86,7 +86,7 @@ const AdminAuthorization: React.FC<AuthorizationProps> = ({ children, authorizat
   if (authorizationMode === 'page' && !isAuthorized) {
     return (
       <div className="flex justify-center items-center h-screen">
-        <h1 className="text-2xl">You are not authorized to access this page</h1>
+        <h1 className="text-2xl">Сначала авторизуйтесь</h1>
       </div>
     );
   }

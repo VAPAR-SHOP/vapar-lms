@@ -20,19 +20,19 @@ const validate = (values: any) => {
   const errors = {} as any;
 
   if (!values.name) {
-    errors.name = 'Required';
+    errors.name = 'Обязательно';
   } else if (values.name.length > 100) {
-    errors.name = 'Must be 100 characters or less';
+    errors.name = 'Должно быть меньше 100 символов';
   }
 
   if (!values.description) {
-    errors.description = 'Required';
+    errors.description = 'Обязательно';
   } else if (values.description.length > 1000) {
-    errors.description = 'Must be 1000 characters or less';
+    errors.description = 'Должно быть меньше 1000 символов';
   }
 
   if (!values.learnings) {
-    errors.learnings = 'Required';
+    errors.learnings = 'Обязательно';
   }
 
   return errors;
@@ -59,7 +59,7 @@ function EditCourseGeneral(props: EditCourseStructureProps) {
         // Add your submission logic here
         dispatchCourse({ type: 'setIsSaved' });
       } catch (e) {
-        setError('Failed to save course structure.');
+        setError('Ошибка при получении данных.');
       }
     },
     enableReinitialize: true,

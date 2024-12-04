@@ -36,8 +36,8 @@ export function OrgProvider({ children, orgslug }: { children: React.ReactNode, 
     return (
       <InfoUI
         href={getUriWithoutOrg(`/signup?orgslug=${orgslug}`)}
-        message='You are not part of this Organization yet'
-        cta={`Join ${org?.name}`}
+        message='Вы пока что не состоите ни в какой организации'
+        cta={`Присоединиться к ${org?.name}`}
       />
     )
   }

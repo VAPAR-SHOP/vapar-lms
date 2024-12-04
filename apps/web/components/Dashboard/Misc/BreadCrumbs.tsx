@@ -21,7 +21,7 @@ function BreadCrumbs(props: BreadCrumbsProps) {
             <div className="flex space-x-2 items-center">
               {' '}
               <Book className="text-gray" size={14}></Book>
-              <Link href="/dash/courses">Courses</Link>
+              <Link href="/dash/courses">Курсы</Link>
             </div>
           ) : (
             ''
@@ -30,7 +30,7 @@ function BreadCrumbs(props: BreadCrumbsProps) {
             <div className="flex space-x-2 items-center">
               {' '}
               <Backpack className="text-gray" size={14}></Backpack>
-              <Link href="/dash/assignments">Assignments</Link>
+              <Link href="/dash/assignments">Задания</Link>
             </div>
           ) : (
             ''
@@ -40,7 +40,7 @@ function BreadCrumbs(props: BreadCrumbsProps) {
               {' '}
               <User className="text-gray" size={14}></User>
               <Link href="/dash/user-account/settings/general">
-                Account Settings
+                Настройки пользователя
               </Link>
             </div>
           ) : (
@@ -50,7 +50,7 @@ function BreadCrumbs(props: BreadCrumbsProps) {
             <div className="flex space-x-2 items-center">
               {' '}
               <Users className="text-gray" size={14}></Users>
-              <Link href="/dash/users/settings/users">Organization users</Link>
+              <Link href="/dash/users/settings/users">Пользователи</Link>
             </div>
           ) : (
             ''
@@ -60,7 +60,7 @@ function BreadCrumbs(props: BreadCrumbsProps) {
             <div className="flex space-x-2 items-center">
               {' '}
               <School className="text-gray" size={14}></School>
-              <Link href="/dash/users">Organization Settings</Link>
+              <Link href="/dash/users">Настройки организации</Link>
             </div>
           ) : (
             ''
@@ -69,7 +69,7 @@ function BreadCrumbs(props: BreadCrumbsProps) {
             <div className="flex space-x-2 items-center">
               {' '}
               <CreditCard className="text-gray" size={14}></CreditCard>
-              <Link href="/dash/payments">Payments</Link>
+              <Link href="/dash/payments">Платежиы</Link>
             </div>
           ) : (
             ''

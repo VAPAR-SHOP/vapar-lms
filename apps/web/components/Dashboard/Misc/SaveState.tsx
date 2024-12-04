@@ -109,7 +109,7 @@ function SaveState(props: { orgslug: string }) {
       ) : (
         <div className="text-gray-600 flex space-x-2 items-center antialiased">
           <Timer size={15} />
-          <div>Unsaved changes</div>
+          <div>Не сохранено</div>
         </div>
       )}
       <div

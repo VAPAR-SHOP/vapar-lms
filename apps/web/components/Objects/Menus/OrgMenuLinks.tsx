@@ -38,21 +38,21 @@ const LinkItem = (props: any) => {
         {props.type == 'courses' && (
           <>
             <BookCopy size={20}  />{' '}
-            <span>Courses</span>
+            <span>Курсы</span>
           </>
         )}
 
         {props.type == 'collections' && (
           <>
             <SquareLibrary size={20} />{' '}
-            <span>Collections</span>
+            <span>Коллекции</span>
           </>
         )}
 
         {props.type == 'trail' && (
           <>
             <Signpost size={20} />{' '}
-            <span>Trail</span>
+            <span>Прогресс</span>
           </>
         )}
       </li>
